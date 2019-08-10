@@ -1,0 +1,23 @@
+{
+  "name": "bc-light-iface",
+  "version": "1.0.0",
+  "main": "bc-light-iface.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kybermonty/bcf-bedroom-lighting.git"
+  },
+  "author": "Martin Grames <martin.grames@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^3.0.0",
+    "serialport": "^7.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
