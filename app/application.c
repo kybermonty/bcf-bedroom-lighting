@@ -2,7 +2,7 @@
 #include <bc_onewire_relay.h>
 
 #define SEND_DATA_INTERVAL (5 * 60 * 1000)
-#define DEBOUNCE_TIME 1000
+#define DEBOUNCE_TIME 250
 
 bool light1 = false;
 bool light2 = false;
@@ -44,16 +44,16 @@ void application_init(void)
     bc_onewire_relay_init(&relay, BC_GPIO_P4, 0x00);
 
     // Initialize switches
-    bc_switch_init(&switch1, BC_GPIO_P17, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP_DYNAMIC);
+    bc_switch_init(&switch1, BC_GPIO_P17, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP);
     bc_switch_set_event_handler(&switch1, switch_event_handler, NULL);
     bc_switch_set_debounce_time(&switch1, DEBOUNCE_TIME);
-    bc_switch_init(&switch2, BC_GPIO_P16, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP_DYNAMIC);
+    bc_switch_init(&switch2, BC_GPIO_P16, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP);
     bc_switch_set_event_handler(&switch2, switch_event_handler, NULL);
     bc_switch_set_debounce_time(&switch2, DEBOUNCE_TIME);
-    bc_switch_init(&switch3, BC_GPIO_P15, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP_DYNAMIC);
+    bc_switch_init(&switch3, BC_GPIO_P15, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP);
     bc_switch_set_event_handler(&switch3, switch_event_handler, NULL);
     bc_switch_set_debounce_time(&switch3, DEBOUNCE_TIME);
-    bc_switch_init(&switch4, BC_GPIO_P14, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP_DYNAMIC);
+    bc_switch_init(&switch4, BC_GPIO_P14, BC_SWITCH_TYPE_NO, BC_SWITCH_PULL_UP);
     bc_switch_set_event_handler(&switch4, switch_event_handler, NULL);
     bc_switch_set_debounce_time(&switch4, DEBOUNCE_TIME);
 
